@@ -9,7 +9,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={ store }>
-      <Router>
+      <Router basename="/Rahim-Store">
         <App />
       </Router>
     </Provider>
