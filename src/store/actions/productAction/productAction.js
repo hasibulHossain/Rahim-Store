@@ -1,6 +1,7 @@
 import * as actionTypes from "../actoinTypes";
 
 const domain = '//rahim-store-api.herokuapp.com';
+// const domain = '//localhost:8080';
 
 export const deleteProduct = (id) => {
   return dispatch => {
@@ -31,6 +32,20 @@ export const fetchProducts = () => {
       })
       .then((data) => {
         dispatch(fetchProductsComplete(data.products));
+      });
+  };
+};
+
+export const fetchSortedProducts = () => {
+  return (dispatch) => {
+    dispatch({ type: actionTypes.INIT })
+    const res = fetch(`${domain}/shop/sorted-products`);
+    res
+      .then((data) => {
+        return data.json();
+      })
+      .then((data) => {
+        dispatch({ type: actionTypes.FETCH_SORTED_PRODUCT_COMPLETE, payload: data.products });
       });
   };
 };
@@ -81,7 +96,6 @@ export const submitEditProduct = (productData, id) => {
   formData.append('price', productData.price);
   formData.append('expiryDate', productData.expiryDate);
   formData.append('image', productData.image);
-  console.log('image>>>>>>> ', productData.image)
   return dispatch => {
     const res = fetch(`${domain}/shop/product/${id}`, {
       method: "PUT",

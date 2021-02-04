@@ -5,7 +5,8 @@ const initialState = {
   editProduct: [],
   isProductAdded: false,
   inEditPage: false,
-  loading: false
+  loading: false,
+  initialLoadTimeExceed: false
 };
 
 const productReducer = (state = initialState, action) => {
@@ -20,6 +21,15 @@ const productReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
+        initialLoadTimeExceed: false,
+        products: action.payload,
+      };
+
+    case actionTypes.FETCH_SORTED_PRODUCT_COMPLETE:
+      return {
+        ...state,
+        loading: false,
+        initialLoadTimeExceed: false,
         products: action.payload,
       };
 

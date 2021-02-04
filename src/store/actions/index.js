@@ -1,5 +1,6 @@
 export {
   fetchProducts,
+  fetchSortedProducts,
   deleteProduct,
   addProductInit,
   getEditProduct,
