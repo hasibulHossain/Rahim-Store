@@ -1,10 +1,8 @@
 {
   "name": "rahim-store",
+  "homepage": "https://hasibulHossain.github.com/Rahim-Store",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "14.15.4"
-  },
   "dependencies": {
     "@craco/craco": "^6.1.0",
     "@tailwindcss/postcss7-compat": "^2.0.2",
