@@ -1,0 +1,24 @@
+.active {
+  color: #2563eb;
+  font-weight: bold;
+}
+
+nav {
+  padding: 1.3rem 0rem;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin-left: 10%;
+  font-weight: bold;
+  color: rgb(70, 70, 70);
+}
+
+nav ul li:first-child {
+  margin-right: auto;
+}
+nav ul li:last-child {
+  margin-left: 1.5rem;
+}

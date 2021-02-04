@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import "./App.css";
+import { connect } from "react-redux";
+import { Route, Switch } from 'react-router-dom';
+import Layout from './components/Layout/Layout';
 
-function App() {
+// local imports
+import Products from "./components/Products/Products";
+import AddProduct from './components/AddProduct/AddProduct';
+import EdditProduct from './components/EdditProduct/EdditProduct';
+import * as actions from "./store/actions/index";
+
+function App(props) {
+  useEffect(() => {
+    props.fetchProducts();
+  }, []);
+
+  let route = (
+    <Switch>
+      <Route path="/" exact >
+        <Products />
+      </Route>
+      <Route path="/add-product">
+        <AddProduct />
+      </Route>
+      <Route path="/edit-product">
+        <EdditProduct />
+      </Route>
+    </Switch>
+  )
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      { route }
+    </Layout>
   );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchProducts: () => dispatch(actions.fetchProducts())
+  };
+};
+
+export default connect(null, mapDispatchToProps)(App);
