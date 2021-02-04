@@ -1,5 +1,5 @@
 # Live preview
 
-Here [Create React App](https://github.com/facebook/create-react-app)
+Here [Live demo](https://github.com/facebook/create-react-app)
 
 # service api

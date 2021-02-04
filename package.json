@@ -1,6 +1,5 @@
 {
   "name": "rahim-store",
-  "homepage": "https://hasibulHossain.github.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
