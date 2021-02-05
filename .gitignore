@@ -10,6 +10,7 @@
 
 # production
 /build
+/git-multipage
 
 # misc
 /server

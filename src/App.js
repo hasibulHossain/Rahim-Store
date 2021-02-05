@@ -14,7 +14,6 @@ import * as actions from "./store/actions/index";
 import Modal from './components/Modal/Modal';
 function App(props) {
   const [openModal, setOpenModal] = useState(false);
-  const [sortOptionValue, setSortOptionValue] = useState('');
 
   const { initialLoadTimeExceed } = props;
 
@@ -31,16 +30,6 @@ function App(props) {
       </Route>
     </Switch>
   )
-  const sortOptionHandler = e => {
-    e.preventDefault();
-    const value = e.target.value;
-    if (value === 'byExpiryDate') {
-      props.fetchSortedProducts()
-    }
-
-    setSortOptionValue(e.target.value);
-    console.log(e.target.value)
-  }
 
   const closeModal = () => {
     setOpenModal(!openModal)
@@ -65,7 +54,7 @@ function App(props) {
     content = (
       <Modal closeModal={ closeModal }>
         <h1 className="text-4xl mb-8">Slow?</h1>
-        <p className="mb-6 text-lg">It may take a few sec to load for the first time. Cause I used Heroku for API deployment. So that after 30 minutes of inactivity Heroku dynos goes to the idle state at the free tier.</p>
+        <p className="mb-6 text-lg">It may take a few sec to load for the first time. Cause I have used Heroku for API deployment. So that after 30 minutes of inactivity Heroku dynos goes to the idle state at the free tier.</p>
         <p className="mb-10 text-lg">Please refresh the page.</p>
       </Modal>
     )
@@ -74,13 +63,6 @@ function App(props) {
     <>
       {content }
       <Layout>
-        <div className="flex flex-col items-end mr-16">
-          <p>Filter Products</p>
-          <select value={ sortOptionValue } onChange={ (e) => sortOptionHandler(e) }>
-            <option value="byPrice" >byPrice</option>
-            <option value="byExpiryDate">By expiry date</option>
-          </select>
-        </div>
         { route }
       </Layout>
     </>
@@ -98,7 +80,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchProducts: () => dispatch(actions.fetchProducts()),
-    fetchSortedProducts: () => dispatch(actions.fetchSortedProducts()),
     initialLoadTimeExceedDispatch: () => dispatch({ type: actionTypes.INITIAL_LOAD_TIME_EXCEED })
   };
 };
