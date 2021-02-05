@@ -39,9 +39,9 @@ function Products(props) {
   if (props.productsArr.length > 0) {
     products = (
       <>
-        <div className="flex flex-col items-end mr-16">
-          <p>Filter Products</p>
-          <select value={ sortOptionValue } onChange={ (e) => sortOptionHandler(e) }>
+        <div className="flex justify-end items-center mr-16 text-lg select">
+          <p className="font-medium">Filter Products</p>
+          <select className="bg-gray-200 py-2 pl-4 pr-12 rounded ml-4" value={ sortOptionValue } onChange={ (e) => sortOptionHandler(e) }>
             <option value="byPrice" >byPrice</option>
             <option value="byExpiryDate">By expiry date</option>
           </select>

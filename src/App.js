@@ -54,7 +54,7 @@ function App(props) {
     content = (
       <Modal closeModal={ closeModal }>
         <h1 className="text-4xl mb-8">Slow?</h1>
-        <p className="mb-6 text-lg">It may take a few sec to load for the first time. Cause I have used Heroku for API deployment. So that after 30 minutes of inactivity Heroku dynos goes to the idle state at the free tier.</p>
+        <p className="mb-6 text-lg">It may take a few sec to load for the first time. Cause I have used Heroku for API deployment. So that after 30 minutes of inactivity Heroku dyno goes to the idle state at the free tier.</p>
         <p className="mb-10 text-lg">Please refresh the page.</p>
       </Modal>
     )

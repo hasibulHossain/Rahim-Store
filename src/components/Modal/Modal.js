@@ -7,7 +7,7 @@ function Modal(props) {
     let modalContent = (
         <div className="modal-wrapper">
             <div onClick={ () => props.closeModal() } className="modal-backdrop"></div>
-            <div className="modal-box p-8 rounded-md bg-gray-100">
+            <div className="modal-box modal-scrollbar p-8 rounded-md bg-gray-100">
                 <div className="flex flex-col items-center">
                     { props.children }
                     <div>
