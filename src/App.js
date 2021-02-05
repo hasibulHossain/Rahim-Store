@@ -8,12 +8,15 @@ import Layout from './components/Layout/Layout';
 import Products from "./components/Products/Products";
 import AddProduct from './components/AddProduct/AddProduct';
 import EdditProduct from './components/EdditProduct/EdditProduct';
+import * as actionTypes from './store/actions/actoinTypes';
 import * as actions from "./store/actions/index";
 
 import Modal from './components/Modal/Modal';
 function App(props) {
   const [openModal, setOpenModal] = useState(false);
-  const [sortOptionValue, setSortOptionValue] = useState('')
+  const [sortOptionValue, setSortOptionValue] = useState('');
+
+  const { initialLoadTimeExceed } = props;
 
   let route = (
     <Switch>
@@ -44,22 +47,26 @@ function App(props) {
   }
 
   useEffect(() => {
-    // setTimeout(() => {
-    //   if (props.initialLoadTimeExceed) {
-    //     console.log('I am from timeout ', props.initialLoadTimeExceed)
-    //     setOpenModal(true)
-    //   }
-    // }, 7000);
+    console.log('from useEffect >>>')
+    if (!props.callProductsForFetch) {
+      props.fetchProducts();
 
-    props.fetchProducts();
-  }, []);
+      setTimeout(() => {
+        props.initialLoadTimeExceedDispatch();
+      }, 7000);
+    }
+
+    if (props.loading && initialLoadTimeExceed) {
+      setOpenModal(true)
+    }
+  }, [initialLoadTimeExceed]);
 
   let content = <div></div>
   if (openModal) {
     content = (
       <Modal closeModal={ closeModal }>
         <h1 className="text-4xl mb-8">Slow?</h1>
-        <p className="mb-16 text-lg">It may takes few sec to load for first time. Cause after 30 minutes of inactivity heroku dynos goes to idle state.(free tier)</p>
+        <p className="mb-16 text-lg">It may take a few sec to load for the first time. Cause I used Heroku for API deployment. So that after 30 minutes of inactivity Heroku dynos goes to the idle state at the free tier.</p>
       </Modal>
     )
   }
@@ -82,14 +89,17 @@ function App(props) {
 
 const mapStateToProps = state => {
   return {
-    initialLoadTimeExceed: state.productsRTR.initialLoadTimeExceed
+    initialLoadTimeExceed: state.productsRTR.initialLoadTimeExceed,
+    loading: state.productsRTR.loading,
+    callProductsForFetch: state.productsRTR.callProductsForFetch
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchProducts: () => dispatch(actions.fetchProducts()),
-    fetchSortedProducts: () => dispatch(actions.fetchSortedProducts())
+    fetchSortedProducts: () => dispatch(actions.fetchSortedProducts()),
+    initialLoadTimeExceedDispatch: () => dispatch({ type: actionTypes.INITIAL_LOAD_TIME_EXCEED })
   };
 };
 

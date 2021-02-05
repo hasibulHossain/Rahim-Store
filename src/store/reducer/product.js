@@ -3,6 +3,7 @@ import * as actionTypes from "../actions/actoinTypes";
 const initialState = {
   products: [],
   editProduct: [],
+  callProductsForFetch: false,
   isProductAdded: false,
   inEditPage: false,
   loading: false,
@@ -14,7 +15,14 @@ const productReducer = (state = initialState, action) => {
     case actionTypes.INIT:
       return {
         ...state,
+        callProductsForFetch: true,
         loading: true
+      }
+
+    case actionTypes.INITIAL_LOAD_TIME_EXCEED:
+      return {
+        ...state,
+        initialLoadTimeExceed: true
       }
 
     case actionTypes.FETCH_PRODUCT_COMPLETE:
