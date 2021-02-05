@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Rahim-Store/static/css/main.a507532e.chunk.css",
-    "main.js": "/Rahim-Store/static/js/main.41008185.chunk.js",
-    "main.js.map": "/Rahim-Store/static/js/main.41008185.chunk.js.map",
+    "main.css": "/Rahim-Store/static/css/main.b9515e24.chunk.css",
+    "main.js": "/Rahim-Store/static/js/main.0f222556.chunk.js",
+    "main.js.map": "/Rahim-Store/static/js/main.0f222556.chunk.js.map",
     "runtime-main.js": "/Rahim-Store/static/js/runtime-main.d61cac41.js",
     "runtime-main.js.map": "/Rahim-Store/static/js/runtime-main.d61cac41.js.map",
     "static/js/2.5f0b76ad.chunk.js": "/Rahim-Store/static/js/2.5f0b76ad.chunk.js",
     "static/js/2.5f0b76ad.chunk.js.map": "/Rahim-Store/static/js/2.5f0b76ad.chunk.js.map",
     "index.html": "/Rahim-Store/index.html",
-    "static/css/main.a507532e.chunk.css.map": "/Rahim-Store/static/css/main.a507532e.chunk.css.map",
+    "static/css/main.b9515e24.chunk.css.map": "/Rahim-Store/static/css/main.b9515e24.chunk.css.map",
     "static/js/2.5f0b76ad.chunk.js.LICENSE.txt": "/Rahim-Store/static/js/2.5f0b76ad.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d61cac41.js",
     "static/js/2.5f0b76ad.chunk.js",
-    "static/css/main.a507532e.chunk.css",
-    "static/js/main.41008185.chunk.js"
+    "static/css/main.b9515e24.chunk.css",
+    "static/js/main.0f222556.chunk.js"
   ]
 }
