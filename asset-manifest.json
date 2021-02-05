@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Rahim-Store/static/css/main.3fa82b2b.chunk.css",
-    "main.js": "/Rahim-Store/static/js/main.ad8da66a.chunk.js",
-    "main.js.map": "/Rahim-Store/static/js/main.ad8da66a.chunk.js.map",
+    "main.js": "/Rahim-Store/static/js/main.78a2dd8d.chunk.js",
+    "main.js.map": "/Rahim-Store/static/js/main.78a2dd8d.chunk.js.map",
     "runtime-main.js": "/Rahim-Store/static/js/runtime-main.d61cac41.js",
     "runtime-main.js.map": "/Rahim-Store/static/js/runtime-main.d61cac41.js.map",
     "static/js/2.109af295.chunk.js": "/Rahim-Store/static/js/2.109af295.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.d61cac41.js",
     "static/js/2.109af295.chunk.js",
     "static/css/main.3fa82b2b.chunk.css",
-    "static/js/main.ad8da66a.chunk.js"
+    "static/js/main.78a2dd8d.chunk.js"
   ]
 }
