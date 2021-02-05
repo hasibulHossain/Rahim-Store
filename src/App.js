@@ -47,7 +47,6 @@ function App(props) {
   }
 
   useEffect(() => {
-    console.log('from useEffect >>>')
     if (!props.callProductsForFetch) {
       props.fetchProducts();
 

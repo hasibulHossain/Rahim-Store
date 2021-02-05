@@ -1,7 +1,7 @@
 import * as actionTypes from "../actoinTypes";
 
-// const domain = '//rahim-store-api.herokuapp.com';
-const domain = '//localhost:8080';
+const domain = '//rahim-store-api.herokuapp.com';
+// const domain = '//localhost:8080';
 
 export const deleteProduct = (id) => {
   return dispatch => {
