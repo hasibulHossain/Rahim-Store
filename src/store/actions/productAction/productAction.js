@@ -32,7 +32,10 @@ export const fetchProducts = () => {
       })
       .then((data) => {
         dispatch(fetchProductsComplete(data.products));
-      });
+      })
+      .catch(err => {
+        fetchProducts()
+      })
   };
 };
 
